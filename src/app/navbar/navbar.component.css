@@ -1,0 +1,14 @@
+.navbar a{
+    
+    color: #000;
+}
+.navbar{
+    background: rgba(240, 240, 240, 0.726);
+    font-size: 17px;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,.2);
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font-size: 1rem;
+}

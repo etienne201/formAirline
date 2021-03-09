@@ -1,0 +1,27 @@
+<h1>Adding Plane</h1>
+<form [formGroup]="airplaneForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="planeModel">Plane Model*</label>
+        <input type="text" formControlName="planeModel" class="form-control"
+        placeholder="Enter the planeModel"
+         [ngClass]="{ 'is-invalid': submitted && f.planeModel.errors }" />
+        <div *ngIf="submitted && f.planeModel.errors" class="invalid-feedback">
+            <div *ngIf="f.planeModel.errors.required">The Plane Model must contain more than thee caracteres.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="planeCapacity">Plane Capacity*</label>
+        <input type="text" formControlName="planeCapacity" class="form-control"
+        placeholder="Enter the plane Capacity"
+         [ngClass]="{ 'is-invalid': submitted && f.planeCapacity.errors }" />
+        <div *ngIf="submitted && f.planeCapacity.errors" class="invalid-feedback">
+            <div *ngIf="f.planeCapacity.errors.required">The plane Capacity must contain more than thee caracteres.</div>
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <button [disabled]="loading" class="btn mt-4">Submit</button>
+         
+        <!-- <a routerLink="/aiplane" class="btn">airplane List</a> -->
+    </div>
+</form>

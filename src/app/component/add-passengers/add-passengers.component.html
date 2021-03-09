@@ -1,0 +1,41 @@
+<h2>Adding Passenger to flight</h2>
+<form [formGroup]="airplaneForm" (ngSubmit)="onSubmit()">
+ 
+    <div class="form-group">
+        <div class="col-sm-12">
+          <label for="exampleFormControlSelect1">Fligth:</label>
+          <select class="form-control" id="exampleFormControlSelect1" 
+          [ngClass]="{ 'is-invalid': submitted && f.flight.errors }" >
+            <option>FROM London TO Madrid At Fri Jan 01 07:34:33 Wat 2016</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <div *ngIf="submitted && f.flight.errors" class="invalid-feedback">
+            <div *ngIf="f.flight.errors.required">The from required</div>
+        </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="exampleFormControlSelect1">Passenger:</label>
+          <select class="form-control" id="exampleFormControlSelect1" 
+          [ngClass]="{ 'is-invalid': submitted && f.passengers.errors }" >
+            <option></option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>  
+            <option>5</option>
+          </select>
+          <div *ngIf="submitted && f.passengers.errors" class="invalid-feedback">
+            <div *ngIf="f.passengers.errors.required">Passenger is required</div>
+        </div>
+        </div>
+      </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn">Submit</button>
+         
+        <!-- <a routerLink="/aiplane" class="btn">airplane List</a> -->
+    </div>
+</form>
